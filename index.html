@@ -7,17 +7,58 @@
 </head>
 <body>
 
+<!-- Background blobs -->
+<div class="memory-blobs">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="blob b4"></span>
+</div>
+
 <div class="container">
-    <h1>My To-Do List</h1>
+
+    <div class="top-bar">
+        <h1>My To-Do List</h1>
+        <button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <div class="task-stats">
+        <span id="pending">Pending: 0</span>
+        <span id="completed">Completed: 0</span>
+    </div>
+
+    <div class="progress">
+        <div id="progressBar"></div>
+    </div>
 
     <div class="input-area">
         <input type="text" id="taskInput" placeholder="Enter task">
+        <select id="priority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+        <input type="date" id="deadline">
         <button class="add-btn" onclick="addTask()">Add</button>
     </div>
 
-    <ul id="taskList"></ul>
+    <div class="columns">
+        <div class="column">
+            <h3>Pending</h3>
+            <ul id="pendingTasks"></ul>
+        </div>
+
+        <div class="column">
+            <h3>Completed</h3>
+            <ul id="completedTasks"></ul>
+        </div>
+    </div>
+
 </div>
+
+<div id="toast"></div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
